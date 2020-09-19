@@ -8,9 +8,14 @@
 </head>
 <body>
 	<%
-		Student s = (Student)session.getAttribute("stud");
+		/*
+		Student s = (Student)session.getAttribute("student");
 		out.print(s.getRollNo()+"<br>");
 		out.print(s.getName()+"<br>");
+		*/
 	%>
+	<jsp:useBean id="st" class="com.jayram.Student" scope="session"></jsp:useBean>
+	<jsp:getProperty property="rollNo" name="st" />
+	<jsp:getProperty property="name" name="st"/>
 </body>
 </html>

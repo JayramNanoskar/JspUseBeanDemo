@@ -9,6 +9,7 @@
 </head>
 <body>
 	<%
+		/*
 		Student st = new Student();
 		int rollno = Integer.parseInt(request.getParameter("rollno"));
 		String name = request.getParameter("name");
@@ -20,7 +21,16 @@
 		
 		RequestDispatcher rd = request.getRequestDispatcher("display.jsp");
 		rd.forward(request, response);
-		
+		*/
+	%>
+	
+	<jsp:useBean id="st" class="com.jayram.Student" scope="session"></jsp:useBean>
+	<jsp:setProperty property="rollNo" name="st" value= '<%= Integer.parseInt(request.getParameter("rollno"))%>'/>
+	<jsp:setProperty property="name" name="st" value= '<%= request.getParameter("name")%>'/>
+	
+	<%
+		RequestDispatcher rd = request.getRequestDispatcher("display.jsp");
+		rd.forward(request, response);
 	%>
 </body>
 </html>
