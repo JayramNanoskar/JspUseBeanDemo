@@ -8,8 +8,7 @@
 </head>
 <body>
 	<%
-		Student s = (Student)request.getAttribute("stud");
-		out.print(s.getClass()+"<br>");
+		Student s = (Student)session.getAttribute("stud");
 		out.print(s.getRollNo()+"<br>");
 		out.print(s.getName()+"<br>");
 	%>

@@ -16,7 +16,8 @@
 		st.setName(name);
 		st.setRollNo(rollno);
 		
-		request.setAttribute("stud", st);
+		session.setAttribute("stud", st);
+		
 		RequestDispatcher rd = request.getRequestDispatcher("display.jsp");
 		rd.forward(request, response);
 		
